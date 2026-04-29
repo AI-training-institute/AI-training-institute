@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - AI Training Institute</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandPrimary: '#8B5CF6',
+                        brandSecondary: '#06B6D4',
+                        brandAccent: '#A78BFA',
+                        brandDark: '#0F172A',
+                        brandCard: '#1E293B',
+                        brandText: '#F8FAFC'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #0F172A;
+            color: #F8FAFC;
+        }
+
+        .glass-effect {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .glass-nav {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .faq-item {
+            transition: all 0.3s ease;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding-top: 1rem;
+        }
+
+        .faq-item.active .chevron-icon {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <!-- NAVIGATION BAR -->
+    <nav class="glass-nav fixed top-0 w-full z-50">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <div
+                    class="w-10 h-10 bg-gradient-to-br from-brandPrimary to-brandSecondary rounded-xl flex items-center justify-center">
+                    <i class="fas fa-brain text-white text-xl"></i>
+                </div>
+                <span class="text-xl font-extrabold tracking-tight text-white">AI TRAINING <span
+                        class="text-brandPrimary">INSTITUTE</span></span>
+            </div>
+
+            <!-- Desktop Menu -->
+            <div class="hidden lg:flex items-center gap-10">
+                <a href="main.html" class="nav-link text-sm font-semibold text-white">Home</a>
+
+                <!-- Courses Dropdown Linked to your files -->
+                <div class="dropdown relative">
+                    <button class="nav-link text-sm font-semibold text-slate-300 flex items-center gap-1">
+                        Courses <i class="fas fa-chevron-down text-[10px]"></i>
+                    </button>
+                    <div
+                        class="dropdown-menu hidden absolute top-full left-0 mt-2 w-56 bg-brandCard border border-white/10 rounded-xl shadow-2xl p-2">
+                        <a href="AIAutomation.html"
+                            class="block px-4 py-3 hover:bg-white/5 rounded-lg text-sm text-slate-300 hover:text-white transition-colors">AI
+                            Automation</a>
+                        <a href="Advancepython.html"
+                            class="block px-4 py-3 hover:bg-white/5 rounded-lg text-sm text-slate-300 hover:text-white transition-colors">Advance
+                            Python</a>
+                        <a href="Machinelearning.html"
+                            class="block px-4 py-3 hover:bg-white/5 rounded-lg text-sm text-slate-300 hover:text-white transition-colors">AI
+                            & ML</a>
+
+                    </div>
+                </div>
+
+                <!-- Internship Dropdown -->
+                <div class="dropdown relative">
+                    <button class="nav-link text-sm font-semibold text-slate-300 flex items-center gap-1">
+                        Internship <i class="fas fa-chevron-down text-[10px]"></i>
+                    </button>
+                    <div
+                        class="dropdown-menu hidden absolute top-full left-0 mt-2 w-56 bg-brandCard border border-white/10 rounded-xl shadow-2xl p-2">
+                        <a href="AIAutomation.html#internship"
+                            class="block px-4 py-3 hover:bg-white/5 rounded-lg text-sm text-slate-300 hover:text-white transition-colors">AI
+                            Developer Track</a>
+                        <a href="Advancepython.html#internship"
+                            class="block px-4 py-3 hover:bg-white/5 rounded-lg text-sm text-slate-300 hover:text-white transition-colors">Python
+                            Development</a>
+                    </div>
+                </div>
+
+                <a href="FAQ.html" class="nav-link text-sm font-semibold text-slate-300">FAQ</a>
+                <a href="Contact.html" class="nav-link text-sm font-semibold text-slate-300">Contact Us</a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfWhPSuuwfmVuzx9zPNpBsxhJbxZdQH8VyWFE69ulkMWR7wxA/viewform?usp=publish-editor"
+                    class="hidden sm:block text-sm font-bold text-white bg-brandPrimary px-6 py-3 rounded-xl hover:bg-opacity-90 transition-all">
+                    Register Now
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- CONTENT SECTION -->
+    <main class="max-w-4xl mx-auto px-6 pt-32 pb-24">
+        <header class="text-center mb-16">
+            <h1 class="text-4xl md:text-5xl font-black text-white mb-4">Frequently Asked Questions</h1>
+            <p class="text-slate-400">Everything you need to know about our courses and internship programs.</p>
+        </header>
+
+        <!-- General FAQs -->
+        <section class="space-y-4 mb-16">
+            <h2 class="text-2xl font-bold text-brandSecondary mb-6 flex items-center gap-2">
+                <i class="fas fa-info-circle"></i> General Information
+            </h2>
+
+            <div class="faq-item glass-effect rounded-2xl p-6 cursor-pointer" onclick="toggleFaq(this)">
+                <div class="flex justify-between items-center gap-4">
+                    <h3 class="font-bold text-white">1. Can I apply directly for an internship without enrolling in a
+                        course?</h3>
+                    <i class="fas fa-chevron-down text-brandPrimary chevron-icon transition-transform"></i>
+                </div>
+                <div class="faq-answer text-slate-400 text-sm leading-relaxed">
+                    Yes, you can apply directly for our internship programs without enrolling in a course.
+                </div>
+            </div>
+
+            <div class="faq-item glass-effect rounded-2xl p-6 cursor-pointer" onclick="toggleFaq(this)">
+                <div class="flex justify-between items-center gap-4">
+                    <h3 class="font-bold text-white">2. Can I do an internship after completing a course?</h3>
+                    <i class="fas fa-chevron-down text-brandPrimary chevron-icon transition-transform"></i>
+                </div>
+                <div class="faq-answer text-slate-400 text-sm leading-relaxed">
+                    Yes, students who complete our courses are eligible to apply for internships.
+                </div>
+            </div>
+
+            <div class="faq-item glass-effect rounded-2xl p-6 cursor-pointer" onclick="toggleFaq(this)">
+                <div class="flex justify-between items-center gap-4">
+                    <h3 class="font-bold text-white">3. Will I receive a certificate after completing the internship?
+                    </h3>
+                    <i class="fas fa-chevron-down text-brandPrimary chevron-icon transition-transform"></i>
+                </div>
+                <div class="faq-answer text-slate-400 text-sm leading-relaxed">
+                    Yes, all interns will receive an official Internship Completion Certificate upon successful
+                    completion.
+                </div>
+            </div>
+
+            <div class="faq-item glass-effect rounded-2xl p-6 cursor-pointer" onclick="toggleFaq(this)">
+                <div class="flex justify-between items-center gap-4">
+                    <h3 class="font-bold text-white">4. Do you provide a certificate after course completion?</h3>
+                    <i class="fas fa-chevron-down text-brandPrimary chevron-icon transition-transform"></i>
+                </div>
+                <div class="faq-answer text-slate-400 text-sm leading-relaxed">
+                    Yes, students will receive a Course Completion Certificate after successfully finishing their
+                    course.
+                </div>
+            </div>
+
+            <div class="faq-item glass-effect rounded-2xl p-6 cursor-pointer" onclick="toggleFaq(this)">
+                <div class="flex justify-between items-center gap-4">
+                    <h3 class="font-bold text-white">5. Are physical classes available, or is it only online?</h3>
+                    <i class="fas fa-chevron-down text-brandPrimary chevron-icon transition-transform"></i>
+                </div>
+                <div class="faq-answer text-slate-400 text-sm leading-relaxed">
+                    We offer both options. You can choose between physical (on-campus) classes and online learning.
+                </div>
+            </div>
+
+            <div class="faq-item glass-effect rounded-2xl p-6 cursor-pointer" onclick="toggleFaq(this)">
+                <div class="flex justify-between items-center gap-4">
+                    <h3 class="font-bold text-white">6. Is it necessary to pay the registration fee in advance?</h3>
+                    <i class="fas fa-chevron-down text-brandPrimary chevron-icon transition-transform"></i>
+                </div>
+                <div class="faq-answer text-slate-400 text-sm leading-relaxed">
+                    Yes, the registration fee must be paid in advance to confirm your enrollment.
+                </div>
+            </div>
+
+            <div class="faq-item glass-effect rounded-2xl p-6 cursor-pointer" onclick="toggleFaq(this)">
+                <div class="flex justify-between items-center gap-4">
+                    <h3 class="font-bold text-white">7. Will I receive proper support during the course or internship?
+                    </h3>
+                    <i class="fas fa-chevron-down text-brandPrimary chevron-icon transition-transform"></i>
+                </div>
+                <div class="faq-answer text-slate-400 text-sm leading-relaxed">
+                    Yes, we provide continuous mentorship, guidance, and technical support throughout your learning
+                    journey.
+                </div>
+            </div>
+
+            <div class="faq-item glass-effect rounded-2xl p-6 cursor-pointer" onclick="toggleFaq(this)">
+                <div class="flex justify-between items-center gap-4">
+                    <h3 class="font-bold text-white">8. What type of learning approach do you follow?</h3>
+                    <i class="fas fa-chevron-down text-brandPrimary chevron-icon transition-transform"></i>
+                </div>
+                <div class="faq-answer text-slate-400 text-sm leading-relaxed">
+                    We focus on project-based, practical learning to ensure real-world skills development.
+                </div>
+            </div>
+        </section>
+
+        <!-- Advanced FAQs -->
+        <section class="space-y-4">
+            <h2 class="text-2xl font-bold text-brandPrimary mb-6 flex items-center gap-2">
+                <i class="fas fa-star"></i> Advanced FAQs
+            </h2>
+
+            <div class="faq-item glass-effect rounded-2xl p-6 cursor-pointer" onclick="toggleFaq(this)">
+                <div class="flex justify-between items-center gap-4">
+                    <h3 class="font-bold text-white">9. What is the duration of your courses and internships?</h3>
+                    <i class="fas fa-chevron-down text-brandPrimary chevron-icon transition-transform"></i>
+                </div>
+                <div class="faq-answer text-slate-400 text-sm leading-relaxed">
+                    Course durations vary depending on the program, while internships typically last between 1 to 2
+                    months.
+                </div>
+            </div>
+
+            <div class="faq-item glass-effect rounded-2xl p-6 cursor-pointer" onclick="toggleFaq(this)">
+                <div class="flex justify-between items-center gap-4">
+                    <h3 class="font-bold text-white">10. What are the eligibility requirements to enroll?</h3>
+                    <i class="fas fa-chevron-down text-brandPrimary chevron-icon transition-transform"></i>
+                </div>
+                <div class="faq-answer text-slate-400 text-sm leading-relaxed">
+                    There are no strict eligibility criteria. Anyone with basic knowledge and a willingness to learn can
+                    enroll.
+                </div>
+            </div>
+
+            <div class="faq-item glass-effect rounded-2xl p-6 cursor-pointer" onclick="toggleFaq(this)">
+                <div class="flex justify-between items-center gap-4">
+                    <h3 class="font-bold text-white">11. Do you offer job placement after course or internship
+                        completion?</h3>
+                    <i class="fas fa-chevron-down text-brandPrimary chevron-icon transition-transform"></i>
+                </div>
+                <div class="faq-answer text-slate-400 text-sm leading-relaxed">
+                    We do not guarantee job placement, but we provide career guidance, portfolio building, and interview
+                    preparation support to help you secure opportunities.
+                </div>
+            </div>
+
+            <div class="faq-item glass-effect rounded-2xl p-6 cursor-pointer" onclick="toggleFaq(this)">
+                <div class="flex justify-between items-center gap-4">
+                    <h3 class="font-bold text-white">12. Is there a refund policy if I change my mind?</h3>
+                    <i class="fas fa-chevron-down text-brandPrimary chevron-icon transition-transform"></i>
+                </div>
+                <div class="faq-answer text-slate-400 text-sm leading-relaxed">
+                    Registration fees are generally non-refundable. However, in special cases, requests may be reviewed
+                    on a case-by-case basis.
+                </div>
+            </div>
+
+            <div class="faq-item glass-effect rounded-2xl p-6 cursor-pointer" onclick="toggleFaq(this)">
+                <div class="flex justify-between items-center gap-4">
+                    <h3 class="font-bold text-white">13. Can I switch from online to physical classes (or vice versa)?
+                    </h3>
+                    <i class="fas fa-chevron-down text-brandPrimary chevron-icon transition-transform"></i>
+                </div>
+                <div class="faq-answer text-slate-400 text-sm leading-relaxed">
+                    Yes, you may request to switch modes depending on availability and scheduling.
+                </div>
+            </div>
+
+            <div class="faq-item glass-effect rounded-2xl p-6 cursor-pointer" onclick="toggleFaq(this)">
+                <div class="flex justify-between items-center gap-4">
+                    <h3 class="font-bold text-white">14. Will I work on real projects during the course or internship?
+                    </h3>
+                    <i class="fas fa-chevron-down text-brandPrimary chevron-icon transition-transform"></i>
+                </div>
+                <div class="faq-answer text-slate-400 text-sm leading-relaxed">
+                    Yes, our programs include real-world projects to give you practical exposure and hands-on
+                    experience.
+                </div>
+            </div>
+
+            <div class="faq-item glass-effect rounded-2xl p-6 cursor-pointer" onclick="toggleFaq(this)">
+                <div class="flex justify-between items-center gap-4">
+                    <h3 class="font-bold text-white">15. What kind of support will I receive after completing the
+                        program?</h3>
+                    <i class="fas fa-chevron-down text-brandPrimary chevron-icon transition-transform"></i>
+                </div>
+                <div class="faq-answer text-slate-400 text-sm leading-relaxed">
+                    You will continue to receive limited post-completion support, including guidance on projects, career
+                    advice, and learning resources.
+                </div>
+            </div>
+
+            <div class="faq-item glass-effect rounded-2xl p-6 cursor-pointer" onclick="toggleFaq(this)">
+                <div class="flex justify-between items-center gap-4">
+                    <h3 class="font-bold text-white">16. Are the classes beginner-friendly?</h3>
+                    <i class="fas fa-chevron-down text-brandPrimary chevron-icon transition-transform"></i>
+                </div>
+                <div class="faq-answer text-slate-400 text-sm leading-relaxed">
+                    Yes, our courses are designed to accommodate beginners as well as intermediate learners.
+                </div>
+            </div>
+
+            <div class="faq-item glass-effect rounded-2xl p-6 cursor-pointer" onclick="toggleFaq(this)">
+                <div class="flex justify-between items-center gap-4">
+                    <h3 class="font-bold text-white">17. How can I register for a course or internship?</h3>
+                    <i class="fas fa-chevron-down text-brandPrimary chevron-icon transition-transform"></i>
+                </div>
+                <div class="faq-answer text-slate-400 text-sm leading-relaxed">
+                    You can register through our website by filling out the registration form and completing the payment
+                    process.
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Contact -->
+        <div class="mt-20 glass-effect p-8 rounded-3xl text-center border-t-2 border-brandSecondary">
+            <h3 class="text-2xl font-bold mb-4">Still have questions?</h3>
+            <p class="text-slate-400 mb-8">We're here to help you navigate your AI journey. Feel free to reach out via
+                WhatsApp.</p>
+            <a href="https://wa.me/923143000957"
+                class="inline-flex items-center gap-3 bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold py-4 px-10 rounded-xl transition-all transform hover:-translate-y-1">
+                <i class="fab fa-whatsapp text-xl"></i> Chat on WhatsApp
+            </a>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-brandDark border-t border-white/5 pt-20 pb-10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-1 md:col-span-1">
+                    <div class="flex items-center gap-2 mb-6">
+                        <div class="w-8 h-8 bg-brandPrimary rounded-lg flex items-center justify-center text-white">
+                            <i class="fas fa-brain text-sm"></i>
+                        </div>
+                        <span class="text-lg font-bold uppercase tracking-tight text-white">AI Training <span
+                                class="text-brandPrimary">Institute</span></span>
+                    </div>
+                    <p class="text-slate-500 text-sm leading-relaxed">
+                        Leading the charge in AI education. Providing world-class training to prepare the next
+                        generation for the intelligence revolution.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-6">Quick Links</h4>
+                    <ul class="space-y-4 text-sm text-slate-500">
+                        <li><a href="#" class="hover:text-brandPrimary transition-colors">About Us</a></li>
+                        <li><a href="#" class="hover:text-brandPrimary transition-colors">Courses</a></li>
+                        <li><a href="#" class="hover:text-brandPrimary transition-colors">Internships</a></li>
+                        <li><a href="#" class="hover:text-brandPrimary transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-6">Programs</h4>
+                    <ul class="space-y-4 text-sm text-slate-500">
+                        <li><a href="AIAutomation.html" class="hover:text-brandPrimary transition-colors">AI
+                                Automation</a></li>
+                        <li><a href="Advancepython.html" class="hover:text-brandPrimary transition-colors">Python
+                                Development</a></li>
+                        <li><a href="Machinelearning.html" class="hover:text-brandPrimary transition-colors">Machine
+                                Learning</a></li>
+                        <li><a href="#" class="hover:text-brandPrimary transition-colors">Data Science</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-6">Connect</h4>
+                    <div class="flex gap-4 mb-6">
+                        <a href="#"
+                            class="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center hover:bg-brandPrimary transition-all text-white"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center hover:bg-brandPrimary transition-all text-white"><i
+                                class="fab fa-linkedin-in"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center hover:bg-brandPrimary transition-all text-white"><i
+                                class="fab fa-instagram"></i></a>
+                    </div>
+                    <p class="text-sm text-slate-500">Subscribe to our newsletter</p>
+                    <div class="mt-4 flex">
+                        <input type="text" placeholder="Email address"
+                            class="bg-white/5 border border-white/10 rounded-l-xl px-4 py-2 text-sm focus:outline-none focus:border-brandPrimary w-full text-white">
+                        <button class="bg-brandPrimary px-4 py-2 rounded-r-xl text-white"><i
+                                class="fas fa-paper-plane text-xs"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-10 border-t border-white/5 text-center text-slate-600 text-xs">
+                © 2024 AI Training Institute. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleFaq(element) {
+            const allItems = document.querySelectorAll('.faq-item');
+            allItems.forEach(item => {
+                if (item !== element) {
+                    item.classList.remove('active');
+                }
+            });
+            element.classList.toggle('active');
+        }
+    </script>
+</body>
+
+</html>

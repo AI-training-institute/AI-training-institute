@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Automation Professional Training</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandPrimary: '#22D3EE',
+                        brandSecondary: '#A855F7',
+                        brandAccent: '#F59E0B',
+                        brandDark: '#0F172A',
+                        brandCard: '#1E293B',
+                        brandText: '#F8FAFC'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #0F172A;
+            color: #F8FAFC;
+        }
+
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+
+        .timeline-dot {
+            height: 1.25rem;
+            width: 1.25rem;
+            border-radius: 50%;
+            background-color: #F59E0B;
+            display: inline-block;
+            position: absolute;
+            left: -2.4rem;
+            top: 0.35rem;
+            box-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
+        }
+
+        .glass-effect {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .glass-nav {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <!-- NAVIGATION BAR -->
+    <nav class="glass-nav fixed top-0 w-full z-50">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex items-center gap-2">
+                <div
+                    class="w-10 h-10 bg-gradient-to-br from-brandPrimary to-brandSecondary rounded-xl flex items-center justify-center">
+                    <i class="fas fa-brain text-white text-xl"></i>
+                </div>
+                <span class="text-xl font-extrabold tracking-tight text-white">AI TRAINING <span
+                        class="text-brandPrimary">INSTITUTE</span></span>
+            </div>
+
+            <!-- Desktop Menu -->
+            <div class="hidden lg:flex items-center gap-10">
+                <a href="main.html" class="nav-link text-sm font-semibold text-white">Home</a>
+
+                <!-- Courses Dropdown Linked to your files -->
+                <div class="dropdown relative">
+                    <button class="nav-link text-sm font-semibold text-slate-300 flex items-center gap-1">
+                        Courses <i class="fas fa-chevron-down text-[10px]"></i>
+                    </button>
+                    <div
+                        class="dropdown-menu hidden absolute top-full left-0 mt-2 w-56 bg-brandCard border border-white/10 rounded-xl shadow-2xl p-2">
+                        <a href="AIAutomation.html"
+                            class="block px-4 py-3 hover:bg-white/5 rounded-lg text-sm text-slate-300 hover:text-white transition-colors">AI
+                            Automation</a>
+                        <a href="Advancepython.html"
+                            class="block px-4 py-3 hover:bg-white/5 rounded-lg text-sm text-slate-300 hover:text-white transition-colors">Advance
+                            Python</a>
+                        <a href="Machinelearning.html"
+                            class="block px-4 py-3 hover:bg-white/5 rounded-lg text-sm text-slate-300 hover:text-white transition-colors">AI
+                            & ML</a>
+
+                    </div>
+                </div>
+
+                <!-- Internship Dropdown -->
+                <div class="dropdown relative">
+                    <button class="nav-link text-sm font-semibold text-slate-300 flex items-center gap-1">
+                        Internship <i class="fas fa-chevron-down text-[10px]"></i>
+                    </button>
+                    <div
+                        class="dropdown-menu hidden absolute top-full left-0 mt-2 w-56 bg-brandCard border border-white/10 rounded-xl shadow-2xl p-2">
+                        <a href="AIAutomation.html#internship"
+                            class="block px-4 py-3 hover:bg-white/5 rounded-lg text-sm text-slate-300 hover:text-white transition-colors">AI
+                            Developer Track</a>
+                        <a href="Advancepython.html#internship"
+                            class="block px-4 py-3 hover:bg-white/5 rounded-lg text-sm text-slate-300 hover:text-white transition-colors">Python
+                            Development</a>
+                    </div>
+                </div>
+
+                <a href="FAQ.html" class="nav-link text-sm font-semibold text-slate-300">FAQ</a>
+                <a href="Contact.html" class="nav-link text-sm font-semibold text-slate-300">Contact Us</a>
+            </div>
+
+            <!-- CTA -->
+            <div class="flex items-center gap-4">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfWhPSuuwfmVuzx9zPNpBsxhJbxZdQH8VyWFE69ulkMWR7wxA/viewform?usp=publish-editor"
+                    class="hidden sm:block text-sm font-bold text-white bg-brandPrimary px-6 py-3 rounded-xl hover:bg-opacity-90 transition-all shadow-lg shadow-brandPrimary/20">
+                    Register Now
+                </a>
+                <button class="lg:hidden text-white text-2xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT WRAPPER WITH TOP SPACING -->
+    <div class="max-w-6xl mx-auto px-4 pt-32 pb-12">
+
+        <!-- HEADER -->
+        <header class="text-center mb-16">
+            <div
+                class="inline-block px-4 py-1 rounded-full bg-brandPrimary/10 border border-brandPrimary/20 text-brandPrimary text-sm font-bold mb-4 tracking-widest uppercase">
+                Professional Certification Program
+            </div>
+            <h1 class="text-5xl md:text-6xl font-black text-white mb-6 tracking-tight">
+                Master <span
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-brandPrimary to-brandSecondary">AI
+                    Automation</span>
+            </h1>
+            <p class="text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
+                Elevate your technical authority and launch a high-income freelance career by mastering advanced AI
+                orchestration and industrial automation tools.
+            </p>
+        </header>
+
+        <!-- SECTION 1: TECH STACK -->
+        <div class="glass-effect rounded-2xl p-8 mb-12 shadow-2xl">
+            <div class="max-w-3xl mx-auto text-center mb-8">
+                <span class="text-4xl inline-block mb-3">🛠️</span>
+                <h3 class="text-3xl font-bold text-white mb-3">Industrial Tech Stack</h3>
+                <p class="text-slate-400">
+                    Our core strategy involves mastering the "Big Three" to build enterprise-grade solutions:
+                    <strong>n8n</strong> for complex logic, <strong>OpenAI / AI APIs</strong> for intelligence, and
+                    <strong>GoHighLevel</strong> for business conversion.
+                </p>
+            </div>
+            <div class="chart-container">
+                <canvas id="techRadarChart"></canvas>
+            </div>
+        </div>
+
+        <!-- SECTION 2: CURRICULUM ROADMAP -->
+        <div class="glass-effect rounded-2xl p-10 mb-12">
+            <div class="text-center mb-12">
+                <span class="text-4xl inline-block mb-3">🗺️</span>
+                <h3 class="text-3xl font-bold text-white">Curriculum Roadmap</h3>
+                <p class="text-slate-400 max-w-2xl mx-auto mt-3">
+                    The institutional path from theory to industrial application.
+                </p>
+            </div>
+
+            <div class="max-w-xl mx-auto relative border-l-2 border-slate-700 pl-10 ml-8 md:ml-auto md:mr-auto">
+                <div class="mb-12 relative">
+                    <span class="timeline-dot"></span>
+                    <h4 class="text-xl font-bold text-brandPrimary">Phase 1: Registration</h4>
+                    <p class="text-slate-400 mt-2 leading-relaxed">Immediate access to the student portal and automation
+                        tool documentation upon 2,000 PKR registration.</p>
+                </div>
+                <div class="mb-12 relative">
+                    <span class="timeline-dot"></span>
+                    <h4 class="text-xl font-bold text-brandSecondary">Phase 2: Technical Mastery (Month 1)</h4>
+                    <p class="text-slate-400 mt-2 leading-relaxed">Deep dive into <strong>n8n</strong> self-hosting,
+                        <strong>OpenAI / AI APIs</strong> integration (GPT-4o, Agents), and <strong>GoHighLevel</strong>
+                        workflow snapshots.
+                    </p>
+                </div>
+                <div class="mb-12 relative">
+                    <span class="timeline-dot"></span>
+                    <h4 class="text-xl font-bold text-brandPrimary">Phase 3: Career Launchpad (Month 2)</h4>
+                    <p class="text-slate-400 mt-2 leading-relaxed">Expert guidance for <strong>Upwork</strong>,
+                        <strong>Fiverr</strong>, and <strong>LinkedIn</strong>. Real-world client simulations and
+                        portfolio building.
+                    </p>
+                </div>
+                <div class="relative">
+                    <span class="timeline-dot !bg-green-500 !box-shadow-none"></span>
+                    <h4 class="text-xl font-bold text-green-400">Phase 4: Graduation & Certification</h4>
+                    <p class="text-slate-400 mt-2 leading-relaxed">Final project submission followed by the issuance of
+                        the official Professional AI Automation Certificate.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 3: FREELANCING TRACK -->
+        <div class="glass-effect rounded-2xl p-8 mb-12 shadow-2xl">
+            <div class="max-w-3xl mx-auto text-center mb-8">
+                <span class="text-4xl inline-block mb-3">🌍</span>
+                <h3 class="text-3xl font-bold text-white mb-3">Freelancing Track & Global Strategy</h3>
+                <p class="text-slate-400">
+                    Landing USD clients requires more than code. We train you on platform-specific algorithms to ensure
+                    you stand out in the global marketplace.
+                </p>
+            </div>
+            <div class="chart-container">
+                <canvas id="platformBarChart"></canvas>
+            </div>
+        </div>
+
+        <!-- SECTION 4: CERTIFICATION -->
+        <div class="glass-effect rounded-2xl p-10 mb-12 border-2 border-brandPrimary/30">
+            <div class="flex flex-col md:flex-row items-center gap-10">
+                <div class="flex-1 text-center md:text-left">
+                    <div class="text-brandPrimary font-bold text-sm tracking-widest uppercase mb-2">Industry Recognition
+                    </div>
+                    <h3 class="text-3xl font-bold text-white mb-4">Official Certification</h3>
+                    <p class="text-slate-400 leading-relaxed mb-6">
+                        Upon successful completion of the course and the final automation project, students will be
+                        awarded a **Verified Certificate of Excellence**. This credential validates your expertise in AI
+                        APIs, n8n, and GHL for global employers and freelance clients.
+                    </p>
+                    <ul class="text-left space-y-3 inline-block">
+                        <li class="flex items-center gap-2 text-slate-300"><span class="text-brandPrimary">✔</span>
+                            Digital Verified Credential</li>
+                        <li class="flex items-center gap-2 text-slate-300"><span class="text-brandPrimary">✔</span>
+                            Portfolio Showcase Endorsement</li>
+                        <li class="flex items-center gap-2 text-slate-300"><span class="text-brandPrimary">✔</span>
+                            LinkedIn Profile Badge</li>
+                    </ul>
+                </div>
+                <div class="flex-1 flex justify-center">
+                    <div
+                        class="w-64 h-48 bg-slate-800 rounded-lg border-4 border-slate-700 flex flex-col items-center justify-center relative overflow-hidden">
+                        <div class="absolute inset-0 opacity-10 flex items-center justify-center text-8xl">📜</div>
+                        <div class="z-10 text-center p-4">
+                            <div class="text-xs text-brandAccent uppercase font-bold tracking-tighter mb-2">Certificate
+                                of Completion</div>
+                            <div class="h-1 w-12 bg-brandPrimary mx-auto mb-2"></div>
+                            <div class="text-[10px] text-slate-400 italic">This certifies that</div>
+                            <div class="text-sm font-serif text-white py-1">YOUR NAME HERE</div>
+                            <div class="text-[8px] text-slate-500">has mastered AI Automation Tools</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 5: FEE STRUCTURE & DURATION -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            <div
+                class="glass-effect rounded-2xl p-8 border-l-4 border-brandPrimary flex flex-col items-center justify-center text-center hover:bg-brandCard transition-all duration-300">
+                <span class="text-5xl mb-4">🗓️</span>
+                <h2 class="text-xs font-bold text-slate-500 uppercase tracking-widest">Program Duration</h2>
+                <p class="text-5xl font-extrabold text-white mt-2">2 Months</p>
+                <p class="text-slate-400 mt-2 italic text-sm">Industrial training sessions</p>
+            </div>
+            <div
+                class="glass-effect rounded-2xl p-8 border-l-4 border-brandAccent flex flex-col items-center justify-center text-center hover:bg-brandCard transition-all duration-300">
+                <span class="text-5xl mb-4">💳</span>
+                <h2 class="text-xs font-bold text-slate-500 uppercase tracking-widest">Total Course Fee</h2>
+                <p class="text-5xl font-extrabold text-white mt-2">22,000 <span
+                        class="text-2xl text-slate-400 font-normal">PKR</span></p>
+                <p class="text-slate-400 mt-2 italic text-sm">Registration & Full Tuition</p>
+            </div>
+        </div>
+
+        <!-- FINAL CALL TO ACTION -->
+        <div
+            class="text-center bg-gradient-to-br from-brandDark to-brandCard text-white rounded-3xl shadow-2xl p-12 border border-slate-800">
+            <h2 class="text-4xl font-black mb-4">Secure Your Future in the AI Economy</h2>
+            <p class="text-lg text-slate-400 mb-10">Batch starting soon. Don't miss out on this high-impact training.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfWhPSuuwfmVuzx9zPNpBsxhJbxZdQH8VyWFE69ulkMWR7wxA/viewform?usp=publish-editor"
+                    target="_blank"
+                    class="bg-brandPrimary hover:bg-cyan-400 text-brandDark font-extrabold py-4 px-10 rounded-xl text-lg transition-all w-full sm:w-auto shadow-xl shadow-cyan-500/20 transform hover:-translate-y-1">
+                    Register via Google Form
+                </a>
+                <a href="https://wa.link/eo89ua" target="_blank"
+                    class="bg-transparent border-2 border-slate-600 hover:border-green-500 hover:bg-green-500/10 text-white font-bold py-4 px-10 rounded-xl text-lg transition-all w-full sm:w-auto flex items-center justify-center gap-3">
+                    <span class="text-green-500 font-bold">💬</span> WhatsApp Us
+                </a>
+            </div>
+            <div class="mt-10 text-xs text-slate-500 space-x-4 uppercase tracking-widest font-bold">
+                <span>#AI_AUTOMATION</span>
+                <span>#TECH_FREELANCING</span>
+                <span>#PAKISTAN_TECHS</span>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-brandDark border-t border-white/5 pt-20 pb-10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-1 md:col-span-1">
+                    <div class="flex items-center gap-2 mb-6">
+                        <div class="w-8 h-8 bg-brandPrimary rounded-lg flex items-center justify-center text-white">
+                            <i class="fas fa-brain text-sm"></i>
+                        </div>
+                        <span class="text-lg font-bold">AI TRAINING INSTITUTE</span>
+                    </div>
+                    <p class="text-slate-500 text-sm leading-relaxed">
+                        Leading the charge in AI education. Providing world-class training to prepare the next
+                        generation for the intelligence revolution.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-6">Quick Links</h4>
+                    <ul class="space-y-4 text-sm text-slate-500">
+                        <li><a href="#" class="hover:text-brandPrimary transition-colors">About Us</a></li>
+                        <li><a href="#" class="hover:text-brandPrimary transition-colors">Courses</a></li>
+                        <li><a href="#" class="hover:text-brandPrimary transition-colors">Internships</a></li>
+                        <li><a href="#" class="hover:text-brandPrimary transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-6">Programs</h4>
+                    <ul class="space-y-4 text-sm text-slate-500">
+                        <li><a href="#" class="hover:text-brandPrimary transition-colors">AI Automation</a></li>
+                        <li><a href="#" class="hover:text-brandPrimary transition-colors">Python Development</a></li>
+                        <li><a href="#" class="hover:text-brandPrimary transition-colors">Machine Learning</a></li>
+                        <li><a href="#" class="hover:text-brandPrimary transition-colors">Data Science</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-6">Connect</h4>
+                    <div class="flex gap-4 mb-6">
+                        <a href="#"
+                            class="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center hover:bg-brandPrimary transition-all"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center hover:bg-brandPrimary transition-all"><i
+                                class="fab fa-linkedin-in"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center hover:bg-brandPrimary transition-all"><i
+                                class="fab fa-instagram"></i></a>
+                    </div>
+                    <p class="text-sm text-slate-500">Subscribe to our newsletter</p>
+                    <div class="mt-4 flex">
+                        <input type="text" placeholder="Email address"
+                            class="bg-white/5 border border-white/10 rounded-l-xl px-4 py-2 text-sm focus:outline-none focus:border-brandPrimary w-full">
+                        <button class="bg-brandPrimary px-4 py-2 rounded-r-xl"><i
+                                class="fas fa-paper-plane text-xs"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-10 border-t border-white/5 text-center text-slate-600 text-xs">
+                © 2024 AI Training Institute. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Chart logic
+        const wrapLabel = (label, maxLength = 16) => {
+            if (typeof label !== 'string' || label.length <= maxLength) return label;
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = '';
+            for (let word of words) {
+                if ((currentLine + word).length > maxLength) {
+                    if (currentLine) lines.push(currentLine.trim());
+                    currentLine = word + ' ';
+                } else {
+                    currentLine += word + ' ';
+                }
+            }
+            if (currentLine) lines.push(currentLine.trim());
+            return lines;
+        };
+
+        const processLabels = (labels) => labels.map(l => wrapLabel(l, 16));
+
+        Chart.defaults.color = '#94A3B8';
+        Chart.defaults.font.family = "'Inter', sans-serif";
+
+        const commonTooltipOptions = {
+            plugins: {
+                tooltip: {
+                    backgroundColor: '#1E293B',
+                    titleColor: '#22D3EE',
+                    bodyColor: '#F8FAFC',
+                    borderColor: '#334155',
+                    borderWidth: 1,
+                    callbacks: {
+                        title: function (tooltipItems) {
+                            const item = tooltipItems[0];
+                            let label = item.chart.data.labels[item.dataIndex];
+                            return Array.isArray(label) ? label.join(' ') : label;
+                        }
+                    }
+                }
+            },
+            maintainAspectRatio: false
+        };
+
+        const radarCtx = document.getElementById('techRadarChart').getContext('2d');
+        new Chart(radarCtx, {
+            type: 'radar',
+            data: {
+                labels: processLabels(['API Integrations & AI Intelligence', 'Automated Scraping & Intelligence', 'Client CRM & Marketing Logic', 'Enterprise Orchestration', 'Sales Pipeline Automation']),
+                datasets: [{
+                    label: 'n8n',
+                    data: [95, 40, 50, 100, 30],
+                    backgroundColor: 'rgba(34, 211, 238, 0.2)',
+                    borderColor: '#22D3EE',
+                    pointBackgroundColor: '#22D3EE',
+                    borderWidth: 3
+                }, {
+                    label: 'OpenAI / AI APIs',
+                    data: [100, 90, 80, 70, 60],
+                    backgroundColor: 'rgba(245, 158, 11, 0.2)',
+                    borderColor: '#F59E0B',
+                    pointBackgroundColor: '#F59E0B',
+                    borderWidth: 3
+                }, {
+                    label: 'GoHighLevel',
+                    data: [60, 20, 100, 50, 95],
+                    backgroundColor: 'rgba(168, 85, 247, 0.2)',
+                    borderColor: '#A855F7',
+                    pointBackgroundColor: '#A855F7',
+                    borderWidth: 3
+                }]
+            },
+            options: {
+                ...commonTooltipOptions,
+                scales: {
+                    r: {
+                        angleLines: { color: '#334155' },
+                        grid: { color: '#334155' },
+                        pointLabels: {
+                            font: { size: 11, weight: 'bold' },
+                            color: '#94A3B8'
+                        },
+                        ticks: { display: false, min: 0, max: 100 }
+                    }
+                }
+            }
+        });
+
+        const barCtx = document.getElementById('platformBarChart').getContext('2d');
+        new Chart(barCtx, {
+            type: 'bar',
+            data: {
+                labels: processLabels(['Fiverr Profile Excellence', 'Upwork Proposal Strategy', 'LinkedIn B2B Outreach']),
+                datasets: [{
+                    label: 'Training Intensity (%)',
+                    data: [30, 40, 30],
+                    backgroundColor: ['#22D3EE', '#A855F7', '#F59E0B'],
+                    borderRadius: 8
+                }]
+            },
+            options: {
+                ...commonTooltipOptions,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 50,
+                        grid: { color: '#334155' }
+                    },
+                    x: {
+                        grid: { display: false }
+                    }
+                },
+                plugins: {
+                    ...commonTooltipOptions.plugins,
+                    legend: { display: false }
+                }
+            }
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - AI Training Institute</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandPrimary: '#8B5CF6',
+                        brandSecondary: '#06B6D4',
+                        brandAccent: '#A78BFA',
+                        brandDark: '#0F172A',
+                        brandCard: '#1E293B',
+                        brandText: '#F8FAFC'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #0F172A;
+            color: #F8FAFC;
+        }
+
+        .glass-effect {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .glass-nav {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .input-field {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .input-field:focus {
+            border-color: #8B5CF6;
+            background: rgba(255, 255, 255, 0.08);
+            outline: none;
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <!-- NAVIGATION BAR -->
+    <nav class="glass-nav fixed top-0 w-full z-50">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <div
+                    class="w-10 h-10 bg-gradient-to-br from-brandPrimary to-brandSecondary rounded-xl flex items-center justify-center">
+                    <i class="fas fa-brain text-white text-xl"></i>
+                </div>
+                <span class="text-xl font-extrabold tracking-tight text-white">AI TRAINING <span
+                        class="text-brandPrimary">INSTITUTE</span></span>
+            </div>
+
+            <div class="hidden lg:flex items-center gap-10">
+                <a href="main.html"
+                    class="nav-link text-sm font-semibold text-slate-300 hover:text-white transition-colors">Home</a>
+                <div class="dropdown relative py-6">
+                    <button class="nav-link text-sm font-semibold text-slate-300 flex items-center gap-1">
+                        Courses <i class="fas fa-chevron-down text-[10px]"></i>
+                    </button>
+                    <div
+                        class="dropdown-menu hidden absolute top-full left-0 w-56 bg-brandCard border border-white/10 rounded-xl shadow-2xl p-2">
+                        <a href="AIAutomation.html"
+                            class="block px-4 py-3 hover:bg-white/5 rounded-lg text-sm text-slate-300 hover:text-white transition-colors">AI
+                            Automation</a>
+                        <a href="Advancepython.html"
+                            class="block px-4 py-3 hover:bg-white/5 rounded-lg text-sm text-slate-300 hover:text-white transition-colors">Advance
+                            Python</a>
+                        <a href="Machinelearning.html"
+                            class="block px-4 py-3 hover:bg-white/5 rounded-lg text-sm text-slate-300 hover:text-white transition-colors">AI
+                            & ML</a>
+                    </div>
+                </div>
+                <div class="dropdown relative py-6">
+                    <button class="nav-link text-sm font-semibold text-slate-300 flex items-center gap-1">
+                        Internship <i class="fas fa-chevron-down text-[10px]"></i>
+                    </button>
+                    <div
+                        class="dropdown-menu hidden absolute top-full left-0 w-56 bg-brandCard border border-white/10 rounded-xl shadow-2xl p-2">
+                        <a href="AIAutomation.html#internship"
+                            class="block px-4 py-3 hover:bg-white/5 rounded-lg text-sm text-slate-300 hover:text-white transition-colors">AI
+                            Developer Track</a>
+                        <a href="Advancepython.html#internship"
+                            class="block px-4 py-3 hover:bg-white/5 rounded-lg text-sm text-slate-300 hover:text-white transition-colors">Python
+                            Development</a>
+                    </div>
+                </div>
+                <a href="FAQ.html" class="nav-link text-sm font-semibold text-white">FAQ</a>
+                <a href="Contact.html"
+                    class="nav-link text-sm font-semibold text-slate-300 hover:text-white transition-colors">Contact
+                    Us</a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfWhPSuuwfmVuzx9zPNpBsxhJbxZdQH8VyWFE69ulkMWR7wxA/viewform?usp=publish-editor"
+                    class="hidden sm:block text-sm font-bold text-white bg-brandPrimary px-6 py-3 rounded-xl hover:bg-opacity-90 transition-all">
+                    Register Now
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HEADER SECTION -->
+    <div class="pt-32 pb-12 text-center px-6">
+        <h1 class="text-4xl md:text-6xl font-black text-white mb-4 tracking-tight">Get In <span
+                class="text-brandPrimary">Touch</span></h1>
+        <p class="text-slate-400 max-w-2xl mx-auto">We’re here to help you with any questions regarding our courses,
+            training programs, and internships. Reach out to us directly through the methods below.</p>
+    </div>
+
+    <!-- MAIN CONTACT CONTENT -->
+    <main class="max-w-7xl mx-auto px-6 pb-24">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+
+            <!-- CONTACT INFO & MAP -->
+            <div class="space-y-8">
+                <!-- Contact Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="glass-effect p-6 rounded-2xl">
+                        <div
+                            class="w-12 h-12 bg-brandPrimary/20 rounded-xl flex items-center justify-center text-brandPrimary mb-4">
+                            <i class="fas fa-phone-alt text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-white mb-2">Phone & WhatsApp</h3>
+                        <p class="text-slate-400 text-sm mb-4">Students can directly call or WhatsApp for quick
+                            assistance.</p>
+                        <a href="https://wa.me/923143000957"
+                            class="text-brandPrimary font-bold hover:underline">0314-3000957</a>
+                    </div>
+                    <div class="glass-effect p-6 rounded-2xl">
+                        <div
+                            class="w-12 h-12 bg-brandSecondary/20 rounded-xl flex items-center justify-center text-brandSecondary mb-4">
+                            <i class="fas fa-envelope text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-white mb-2">Email Address</h3>
+                        <p class="text-slate-400 text-sm mb-4">For detailed inquiries, email our response team.</p>
+                        <a href="mailto:sohailrehman4255@gmail.com"
+                            class="text-brandSecondary font-bold hover:underline">sohailrehman4255@gmail.com</a>
+                    </div>
+                </div>
+
+                <!-- Training Modes & Address -->
+                <div class="glass-effect p-8 rounded-3xl">
+                    <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-3">
+                        <i class="fas fa-map-marker-alt text-brandPrimary"></i> Location & Modes
+                    </h3>
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="text-brandPrimary mt-1"><i class="fas fa-laptop"></i></div>
+                            <div>
+                                <h4 class="font-bold text-white">Online Classes & Internships</h4>
+                                <p class="text-slate-400 text-sm">Conducting sessions worldwide via Google Meet or Zoom.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="text-brandSecondary mt-1"><i class="fas fa-school"></i></div>
+                            <div>
+                                <h4 class="font-bold text-white">Physical Classes (Al-Raheem Academy)</h4>
+                                <p class="text-slate-400 text-sm">Plot No. 26, Rachna Town 1, Waqas Pan 3 Street,
+                                    Satiana Road, Faisalabad, 38000, Pakistan</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Google Map Iframe -->
+                <div class="rounded-3xl overflow-hidden h-64 glass-effect border border-white/5">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3406.467382223743!2d73.1137283754224!3d31.39195437427494!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3922675aa10dabcf%3A0xedbba92c8e93d835!2sAl-Raheem%20Academy!5e0!3m2!1sen!2spk!4v1714100000000"
+                        class="w-full h-full border-0 grayscale invert opacity-70" allowfullscreen="" loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+
+            <!-- CONTACT FORM -->
+            <div class="glass-effect p-8 md:p-12 rounded-3xl border-t-4 border-brandPrimary">
+                <h2 class="text-3xl font-black text-white mb-2">Inquiry Form</h2>
+                <p class="text-slate-400 mb-8">Send us your details and we will contact you shortly.</p>
+
+                <form action="#" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold text-slate-400 uppercase tracking-widest">Full Name</label>
+                            <input type="text" placeholder="Your Name"
+                                class="input-field w-full px-5 py-4 rounded-xl text-sm">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold text-slate-400 uppercase tracking-widest">Phone
+                                Number</label>
+                            <input type="text" placeholder="03xx-xxxxxxx"
+                                class="input-field w-full px-5 py-4 rounded-xl text-sm">
+                        </div>
+                    </div>
+
+                    <div class="space-y-2">
+                        <label class="text-xs font-bold text-slate-400 uppercase tracking-widest">Select Program</label>
+                        <select class="input-field w-full px-5 py-4 rounded-xl text-sm appearance-none">
+                            <option>Advanced Python Development</option>
+                            <option>AI Automation Course</option>
+                            <option>AI & Machine Learning</option>
+                            <option>Internship Program</option>
+                        </select>
+                    </div>
+
+                    <div class="space-y-2">
+                        <label class="text-xs font-bold text-slate-400 uppercase tracking-widest">Your Message</label>
+                        <textarea rows="4" placeholder="Ask us anything..."
+                            class="input-field w-full px-5 py-4 rounded-xl text-sm resize-none"></textarea>
+                    </div>
+
+                    <button type="submit"
+                        class="w-full bg-brandPrimary hover:bg-brandAccent text-white font-bold py-5 rounded-xl transition-all transform hover:-translate-y-1 shadow-xl shadow-brandPrimary/20">
+                        Send Inquiry <i class="fas fa-paper-plane ml-2 text-xs"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-brandDark border-t border-white/5 pt-20 pb-10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-1 md:col-span-1">
+                    <div class="flex items-center gap-2 mb-6">
+                        <div class="w-8 h-8 bg-brandPrimary rounded-lg flex items-center justify-center text-white">
+                            <i class="fas fa-brain text-sm"></i>
+                        </div>
+                        <span class="text-lg font-bold uppercase tracking-tight text-white">AI Training <span
+                                class="text-brandPrimary">Institute</span></span>
+                    </div>
+                    <p class="text-slate-500 text-sm leading-relaxed">
+                        Leading the charge in AI education. Providing world-class training to prepare the next
+                        generation for the intelligence revolution.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-6">Quick Links</h4>
+                    <ul class="space-y-4 text-sm text-slate-500">
+                        <li><a href="main.html" class="hover:text-brandPrimary transition-colors">Home</a></li>
+                        <li><a href="main.html#courses" class="hover:text-brandPrimary transition-colors">Courses</a>
+                        </li>
+                        <li><a href="FAQ.html" class="hover:text-brandPrimary transition-colors">FAQ</a></li>
+                        <li><a href="Contact.html"
+                                class="hover:text-brandPrimary transition-colors text-white">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-6">Programs</h4>
+                    <ul class="space-y-4 text-sm text-slate-500">
+                        <li><a href="AIAutomation.html" class="hover:text-brandPrimary transition-colors">AI
+                                Automation</a></li>
+                        <li><a href="Advancepython.html" class="hover:text-brandPrimary transition-colors">Python
+                                Development</a></li>
+                        <li><a href="Machinelearning.html" class="hover:text-brandPrimary transition-colors">Machine
+                                Learning</a></li>
+                        <li><a href="#" class="hover:text-brandPrimary transition-colors">Internships</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-6">Connect</h4>
+                    <div class="flex gap-4 mb-6">
+                        <a href="#"
+                            class="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center hover:bg-brandPrimary transition-all text-white"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center hover:bg-brandPrimary transition-all text-white"><i
+                                class="fab fa-linkedin-in"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center hover:bg-brandPrimary transition-all text-white"><i
+                                class="fab fa-instagram"></i></a>
+                    </div>
+                    <p class="text-sm text-slate-500">Stay updated via our newsletter</p>
+                    <div class="mt-4 flex">
+                        <input type="text" placeholder="Email address"
+                            class="bg-white/5 border border-white/10 rounded-l-xl px-4 py-2 text-sm focus:outline-none focus:border-brandPrimary w-full text-white">
+                        <button class="bg-brandPrimary px-4 py-2 rounded-r-xl text-white"><i
+                                class="fas fa-paper-plane text-xs"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-10 border-t border-white/5 text-center text-slate-600 text-xs">
+                © 2024 AI Training Institute. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
